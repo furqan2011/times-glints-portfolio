@@ -1,0 +1,106 @@
+@import "tailwindcss";
+@custom-variant dark (&:where(.dark, .dark *));
+
+@layer base {
+  :root {
+    --font-heading: 'Outfit', sans-serif;
+    --font-body: 'Plus Jakarta Sans', sans-serif;
+  }
+
+  body {
+    font-family: var(--font-body);
+    background-color: #050814;
+    color: #f1f5f9;
+    overflow-x: hidden;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-heading);
+  }
+}
+
+/* Glassmorphism & Neon Glow Utilities */
+.glass-panel {
+  background: rgba(10, 18, 38, 0.65);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(56, 189, 248, 0.12);
+}
+
+.glass-panel-hover {
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.glass-panel-hover:hover {
+  background: rgba(15, 26, 54, 0.8);
+  border-color: rgba(56, 189, 248, 0.35);
+  box-shadow: 0 12px 35px -10px rgba(0, 149, 255, 0.15), 0 0 20px -5px rgba(99, 102, 241, 0.12);
+}
+
+/* Subtle Gradient Border */
+.gradient-border-card {
+  position: relative;
+  border-radius: 1rem;
+  background: linear-gradient(135deg, rgba(56, 189, 248, 0.18) 0%, rgba(99, 102, 241, 0.08) 50%, rgba(226, 232, 240, 0.05) 100%);
+  padding: 1px;
+}
+
+.gradient-border-inner {
+  background: rgba(8, 14, 30, 0.92);
+  border-radius: calc(1rem - 1px);
+}
+
+/* Futuristic Grid Background */
+.bg-cyber-grid {
+  background-size: 50px 50px;
+  background-image: 
+    linear-gradient(to right, rgba(56, 189, 248, 0.035) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(56, 189, 248, 0.035) 1px, transparent 1px);
+}
+
+/* Radial Glow Orbs */
+.glow-orb-blue {
+  background: radial-gradient(circle, rgba(14, 165, 233, 0.22) 0%, rgba(59, 130, 246, 0.08) 45%, transparent 70%);
+}
+
+.glow-orb-purple {
+  background: radial-gradient(circle, rgba(139, 92, 246, 0.18) 0%, rgba(99, 102, 241, 0.06) 45%, transparent 70%);
+}
+
+.glow-orb-cyan {
+  background: radial-gradient(circle, rgba(6, 182, 212, 0.25) 0%, transparent 65%);
+}
+
+/* Luxury text shimmer */
+@keyframes text-shimmer {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.animate-shimmer {
+  background: linear-gradient(90deg, #ffffff 0%, #93c5fd 25%, #e2e8f0 50%, #60a5fa 75%, #ffffff 100%);
+  background-size: 200% auto;
+  color: transparent;
+  -webkit-background-clip: text;
+  background-clip: text;
+  animation: text-shimmer 6s ease infinite;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #050814;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #1e293b;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #3b82f6;
+}
